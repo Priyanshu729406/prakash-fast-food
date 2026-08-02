@@ -1,4 +1,4 @@
-function calculateOrder(){
+function calculateOrder() {
 
     let item = document.getElementById("item");
     let price = Number(item.value);
@@ -7,22 +7,25 @@ function calculateOrder(){
 
     let quantity = Number(document.getElementById("quantity").value);
 
-    let total = price * quantity;
+    if (quantity < 1) {
+        quantity = 1;
+        document.getElementById("quantity").value = 1;
+    }
 
+    let total = price * quantity;
 
     document.getElementById("total").innerHTML =
     "Total: ₹" + total;
 
-
     let message =
-    "Namaste Prakash Fast Food 🙏%0A%0A" +
+    "🍔 *Prakash Fast Food*%0A%0A" +
+    "Namaste 🙏%0A%0A" +
     "Mujhe order karna hai.%0A%0A" +
-    "Item: " + itemName + "%0A" +
-    "Quantity: " + quantity + "%0A" +
-    "Total Amount: ₹" + total + "%0A%0A" +
+    "🍽️ Item: " + itemName + "%0A" +
+    "🔢 Quantity: " + quantity + "%0A" +
+    "💰 Total: ₹" + total + "%0A%0A" +
     "Please confirm my order.%0A%0A" +
-    "Thank you 😊";
-
+    "Thank You ❤️";
 
     document.getElementById("orderWhatsapp").href =
     "https://wa.me/918126598181?text=" + message;
