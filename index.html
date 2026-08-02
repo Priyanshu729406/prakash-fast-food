@@ -27,11 +27,13 @@
 <li><a href="#grocery">Grocery</a></li>
 <li><a href="#money">Money Garlands</a></li>
 <li><a href="#gallery">Gallery</a></li>
+<li><a href="#order">Order</a></li>
 <li><a href="#contact">Contact</a></li>
 
 </ul>
 
 </nav>
+
 
 
 
@@ -104,6 +106,7 @@ Explore Menu
 
 </div>
 
+
 </section>
 
 
@@ -154,13 +157,6 @@ Explore Menu
 
 
 </section>
-
-
-
-
-
-
-
 <section id="money" class="section">
 
 
@@ -234,6 +230,85 @@ Garland Photo
 
 
 
+
+<!-- Order Calculator -->
+
+<section id="order" class="section">
+
+
+<h1>Place Your Order</h1>
+
+
+<div class="card">
+
+
+<label>Select Item:</label>
+
+
+<select id="item">
+
+<option value="30">Momos Half - ₹30</option>
+<option value="60">Momos Full - ₹60</option>
+
+<option value="30">Chowmein Half - ₹30</option>
+<option value="60">Chowmein Full - ₹60</option>
+
+<option value="40">Maggi Half - ₹40</option>
+<option value="80">Maggi Full - ₹80</option>
+
+<option value="15">Tea - ₹15</option>
+
+<option value="30">Special Tea - ₹30</option>
+
+<option value="15">Bread Pakoda - ₹15</option>
+<option value="20">Bread Pakoda - ₹20</option>
+
+</select>
+
+
+<br><br>
+
+
+<label>Quantity:</label>
+
+
+<input type="number" id="quantity" value="1" min="1">
+
+
+<br><br>
+
+
+<button onclick="calculateOrder()">
+Calculate Total
+</button>
+
+
+<h2 id="total">
+Total: ₹0
+</h2>
+
+
+<a id="orderWhatsapp" target="_blank">
+
+<button class="whatsapp">
+WhatsApp Order
+</button>
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
 <section id="contact" class="contact">
 
 
@@ -279,20 +354,6 @@ Call Now
 
 
 <br><br>
-
-
-
-<a href="https://wa.me/919917857259?text=Hello%20Prakash%20Fast%20Food,%20mujhe%20order%20karna%20hai." target="_blank">
-
-
-<button class="whatsapp">
-
-WhatsApp Order
-
-</button>
-
-
-</a>
 
 
 
