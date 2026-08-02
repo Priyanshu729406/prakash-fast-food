@@ -25,6 +25,6 @@ function calculateOrder(){
 
 
     document.getElementById("orderWhatsapp").href =
-    "https://wa.me/919917857259?text=" + message;
+    "https://wa.me/918126598181?text=" + message;
 
 }
