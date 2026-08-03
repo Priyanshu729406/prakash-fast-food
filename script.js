@@ -136,5 +136,5 @@ function payNow(){
     let upiLink =
     `upi://pay?pa=9634713276@fam&pn=Prakash Fast Food&am=${total}&cu=INR`;
 
-    window.location.href = upiLink;
+    window.location.assign(upilink);
 }
