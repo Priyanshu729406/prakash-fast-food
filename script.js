@@ -115,8 +115,10 @@ ${order}
 
 📍 ${locationLink}`;
 
-    document.getElementById("orderWhatsapp").href=
-    "https://wa.me/919634713276?text="+encodeURIComponent(message);
+    let whatsappLink =
+"https://wa.me/919634713276?text=" + encodeURIComponent(message);
+
+window.open(whatsappLink, "_blank");
 }
 function payNow(){
 
