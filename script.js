@@ -13,7 +13,7 @@ function getLocation() {
             document.getElementById("locationStatus").innerHTML =
                 "✅ Live Location Added Successfully";
 
-        }, function(error) {
+        }, function() {
 
             alert("Please allow location permission.");
 
@@ -30,7 +30,7 @@ function getLocation() {
 function calculateOrder() {
 
     let item = document.getElementById("item");
-    let quantity = document.getElementById("quantity").value;
+    let quantity = parseInt(document.getElementById("quantity").value);
 
     let customerName = document.getElementById("customerName").value;
     let customerPhone = document.getElementById("customerPhone").value;
@@ -43,13 +43,10 @@ function calculateOrder() {
 
     document.getElementById("total").innerHTML = "Total: ₹" + total;
 
-    let locationLink = "";
+    let locationLink = "Location Not Shared";
 
     if (latitude !== "" && longitude !== "") {
-        locationLink =
-            "https://maps.google.com/?q=" + latitude + "," + longitude;
-    } else {
-        locationLink = "Location Not Shared";
+        locationLink = "https://maps.google.com/?q=" + latitude + "," + longitude;
     }
 
     let message =
@@ -85,23 +82,19 @@ ${locationLink}`;
         encodeURIComponent(message);
 
     document.getElementById("orderWhatsapp").href = whatsappLink;
+
 }
 
 function payNow() {
 
-    let paymentMethod =
-        document.getElementById("paymentMethod").value;
+    let price = parseInt(document.getElementById("item").value);
+    let quantity = parseInt(document.getElementById("quantity").value);
 
-    if (paymentMethod === "Cash on Delivery") {
+    let total = price * quantity;
 
-        alert("Cash on Delivery selected.\nPlease place your order on WhatsApp.");
+    let upiLink =
+        `upi://pay?pa=9634713276@fam&pn=Prakash Fast Food&am=${total}&cu=INR`;
 
-        return;
-
-    }
-
-    alert(
-        "UPI Payment Number:\n\n9634713276\n\nOpen PhonePe / Google Pay / Paytm and pay to this number."
-    );
+    window.location.href = upiLink;
 
 }
